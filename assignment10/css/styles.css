@@ -24,7 +24,7 @@ a:hover {
 }
 
 img { 
-    max-width: 60vw;
+    max-width: 300px;
 } 
 
 h1{
@@ -37,8 +37,11 @@ h1{
 
 h2 {
     padding-left: 1.75em;
+    padding-top: .5em;
 }
-
+h3 {
+    padding-left: 2em;
+}
 body {
     color: #191716;
     margin: 0;
@@ -112,12 +115,20 @@ nav li:hover ul {
 }
 
 .portfolio-item {
-    border-bottom: 3px dotted #25283D;
+    border-bottom: 3px solid white;
     padding-bottom: 1em;
 }
 figcaption {
     padding-top: 1em;
 }
+/* Aside info ------------------*/
+.more {
+    background-color: #ffb6ff;
+    padding: .5em 1em 1em 1em;
+}
+
+
+
 
 /* *Contact Info 
 --------------------------*/
@@ -136,31 +147,110 @@ footer {
     padding: 15px;
     display: inline-block;
 }
-
-/* Grid
+/* Site width */
+.site {
+    max-width: 630px;
+}
+/* Grid: medium size
 ---------------------------- */
 @supports (grid-area: auto) {
-    @media screen and (min-width: 670px) {
-        /* .site {
+    @media screen and (min-width: 631px){
+        img {
+            max-width: 200px;
+        }
+        .site {
             display: grid;
-            grid-template-columns: repeat(2, 50em);
-            grid-template-rows: auto auto 25em repeat(6, 40em);
-            /* padding: none; */
-        /* } */
+            grid-template-columns: 20em 22em;
+            grid-template-rows: repeat(3, auto) 30em 12em repeat (4, auto);
+            gap: .5em;
+            max-width: none;
+            padding: none;
         }
         .nav-bar {
-            grid-column: 1/3;
+            grid-column: span 3;
         }
         .masthead {
-            grid-column: 1/3;
+            grid-column: span 3;
         }
-        #car {
+        #boxer {
+            grid-column: 2/4;
+        }
+        #hockney {
+            grid-column: 2/4;
+        }
+        #claus {
             grid-column: 1/2;
         }
-
-        img {
+        #castile {
+            grid-column: 1/2;
+        }
+        #self-portrait {
+            grid-column: 2/4;
+        }
+        footer {
+            grid-column: 2/4;
+        }
+        .more {
+            grid-column: 1/2;
+        }
+        .portfolio-item {
+            border-bottom: none;
+        }
+    }
+    /* Grid: large size
+    --------------------------- */
+    @media screen and (min-width: 960px) {
+        .site {
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr;
+            grid-template-rows: repeat(3, auto) 30em 12em auto;
+            gap: 1em 1em;
+            max-width: none;
+            padding: none;
+        }
+        .portfolio-item {
+            border-bottom: none;
+        }
+        .nav-bar {
+            grid-column: 1/4;
+        }
+        .masthead {
+            grid-column: 1/4;
+        }
+        
+        #car {
+            grid-column: 1/4;
+            grid-row: 3/4;
+        }
+        #car img {
+            max-width: 600px;
+        }
+        #boxer {
+            grid-row: 4/5;
+        }
+        #claus {
+            grid-row: 4/6;
+        }
+        #hockney {
+            grid-row: 4/6;
+        }
+        #castile {
+            grid-row: 6/7;
+        }
+        #self-portrait {
+            grid-column: 2/3;
+        }
+        .contact-list {
             display: flex;
-            justify-content: left;
+            flex-direction: column;
+            padding-left: 2em;
+        }
+        footer {
+            grid-column: 3/4;
+        }
+        .more {
+            grid-column: 2/4;
+            grid-row: 5/6;
         }
     }
 }
