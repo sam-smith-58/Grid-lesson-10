@@ -12,7 +12,7 @@ header {
     background-color: #25283D;
     color: #eef7ff;
     text-align: left;
-    padding-bottom: .25em;
+    padding-bottom: 1em;
 }
 
 a {
@@ -57,7 +57,7 @@ body {
 /* Navigation Bar
 -------------------------- */
 nav {
-    background-color: #ffb6ff;
+    background-color: #ffcfff;
 }
 
 /* location of nav bar and gets rid of bullets */
@@ -123,7 +123,7 @@ figcaption {
 }
 /* Aside info ------------------*/
 .more {
-    background-color: #ffb6ff;
+    background-color: #ffcfff;
     padding: .5em 1em 1em 1em;
 }
 
@@ -213,32 +213,46 @@ footer {
         }
         .nav-bar {
             grid-column: 1/4;
+            display: flex;
         }
         .masthead {
             grid-column: 1/4;
         }
-        
         #car {
             grid-column: 1/4;
             grid-row: 3/4;
+            text-align: center;
         }
         #car img {
             max-width: 600px;
         }
+        #car figcaption {
+            text-align: center;
+        }
+        figcaption {
+            text-align: left;
+        }
         #boxer {
-            grid-row: 4/5;
+            grid-row: 4/6;
+            grid-column: 3/4;
+            text-align: center;
         }
         #claus {
             grid-row: 4/6;
+            text-align: center;
         }
         #hockney {
             grid-row: 4/6;
+            grid-column: 2/3;
+            text-align: center;
         }
         #castile {
             grid-row: 6/7;
+            text-align: center;
         }
         #self-portrait {
             grid-column: 2/3;
+            text-align: center;
         }
         .contact-list {
             display: flex;
@@ -251,6 +265,7 @@ footer {
         .more {
             grid-column: 2/4;
             grid-row: 5/6;
+            text-align: center;
         }
     }
 }
