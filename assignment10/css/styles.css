@@ -59,6 +59,10 @@ body {
 nav {
     background-color: #ffcfff;
 }
+nav a {
+    color: #191716;
+    text-decoration: none;
+}
 
 /* location of nav bar and gets rid of bullets */
 nav ul {
@@ -151,10 +155,167 @@ footer {
 .site {
     max-width: 630px;
 }
+/* Hamburger menu for smaller sizes
+---------------------------------- */
+@media screen and (max-width: 630px){
+    .site {
+        overflow-x: hidden;
+        background-color: #25283D;
+    }
+    header {
+        text-align: center;
+        padding-right: .25em;
+        margin: 0 0 10px 70px;
+    }
+    .nav-bar {
+        background-color: none;
+    }
+    #menuToggle
+    {
+    display: block;
+    position: relative;
+    top: 60px;
+    left: 15px;
+    
+    z-index: 1;
+
+    
+    -webkit-user-select: none;
+    user-select: none;
+    }
+
+    #menuToggle a
+    {
+    text-decoration: none;
+    color: #232323;
+    
+    transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover
+    {
+    color: white;
+    }
+
+
+    #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    
+    cursor: pointer;
+    
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    
+    -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    
+    background: #edbbed;
+    border-radius: 3px;
+    
+    z-index: 1;
+    transform-origin: 4px 0px;
+  
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+    
+    }
+
+    #menuToggle span:first-child {
+    transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2){
+    transform-origin: 0% 100%;
+    }
+
+    #menu {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    
+    background: #f4faff;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    
+    /* slides menu in */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+    #menuToggle input:checked ~ ul {
+    transform: none;
+    }
+
+    /* how nav items look when hovered over */
+    nav ul li:hover {
+    background-color: #CAE5FF;
+    }
+
+    /* submenu display settings */
+    nav ul li ul {
+    padding: 0;
+    position: absolute;
+    top: 48px;
+    left: -10000px;
+    width: 150px;
+    }
+
+    /* submenu items */
+    nav ul li ul li {
+    background-color: #98bcde;
+    display: block;
+    z-index: 1;
+    }
+
+    /* submenu items when they're hovered over */
+    nav ul li ul li:hover {
+        background-color: plum;
+    }
+
+    /* submenu when hovered */
+    nav li:hover ul {
+        display: block;
+        left: 0px;
+    }
+}
+
 /* Grid: medium size
 ---------------------------- */
 @supports (grid-area: auto) {
     @media screen and (min-width: 631px){
+        #checkbox {
+            display: none;
+        }
+        #menuToggle a
+        {
+        text-decoration: none;
+        color: #232323;
+        
+        transition: color 0.3s ease;
+        }
+    
+        #menuToggle a:hover
+        {
+        color: white;
+        }
+
         img {
             max-width: 200px;
         }
@@ -196,6 +357,7 @@ footer {
         .portfolio-item {
             border-bottom: none;
         }
+        
     }
     /* Grid: large size
     --------------------------- */
@@ -218,6 +380,19 @@ footer {
         .masthead {
             grid-column: 1/4;
         }
+        #menuToggle a
+        {
+        text-decoration: none;
+        color: #232323;
+        
+        transition: color 0.3s ease;
+        }
+    
+        #menuToggle a:hover
+        {
+        color: white;
+        }
+        
         #car {
             grid-column: 1/4;
             grid-row: 3/4;

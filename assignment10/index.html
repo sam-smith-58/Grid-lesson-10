@@ -12,34 +12,42 @@
 </head>
 <body class="site">
         <!-- Navigation bar  ----------------------->
-        <nav class="nav-bar">
-            <ul>
+        <nav class="nav-bar" role="navigation">
+          <!-- Hamburger menu ------------------------>
+          <div id="menuToggle">
+          <input type="checkbox" id="checkbox"/>
+          <span></span>
+          <span></span>
+          <span></span>
+
+            <ul id="menu">
             <li>Home</li>
             <li>About Me</li>
             <!-- Services dropdown -->
             <li> Services
             <ul>
-              <li>Web Design</li>
-              <li>Graphic Design</li>
-              <li>Logo Design</li>
+              <a href="#"><li>Web Design</li></a>
+              <a href="#"><li>Graphic Design</li></a>
+              <a href="#"><li>Logo Design</li></a>
             </ul>
             </li>
             <!-- Work Experience dropdown -->
             <li>Work Experience
             <ul>
-              <li> Relevant Work Experience </li>
-              <li> Other Work Experience </li>
+              <a href="#"><li> Relevant Work Experience </li></a>
+              <a href="#"><li> Other Work Experience </li></a>
             </ul>
             </li>
             <!-- Contact dropdown -->
             <li>Contact
               <ul>
-                <li> Phone </li>
-                <li> Social Media </li>
-                <li> Contact Form </li>
+                <a href="#"><li> Phone </li></a>
+                <a href="#"><li> Social Media </li></a>
+                <a href="#"><li> Contact Form </li></a>
               </ul>
             </li>
             </ul>
+          </div>
         </nav>
         <!-- Header section -------------------------------------->
         <header class="masthead"> 
